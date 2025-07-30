@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "com.yalu.addon.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "ModuleMixin",
+    "TextRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "ModuleMixin",
+    "SettingMixin",
+    "VanillaTextRendererMixin"
+  ]
+}

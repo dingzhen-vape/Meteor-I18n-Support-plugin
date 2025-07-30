@@ -2,23 +2,23 @@
   "schemaVersion": 1,
   "id": "addon-template",
   "version": "${version}",
-  "name": "Addon Template",
+  "name": "Meteor CN Translator",
   "description": "An addon template for Meteor Client addons.",
   "authors": [
-    "seasnail"
+    "kono_yalu"
   ],
   "contact": {
-    "sources": "https://github.com/MeteorDevelopment/meteor-addon-template"
+    "sources": "https://github.com/dingzhen-vape/meteor-addon-Translate"
   },
-  "icon": "assets/template/icon.png",
+  "icon": "assets/yalu/icon.png",
   "environment": "client",
   "entrypoints": {
     "meteor": [
-      "com.example.addon.AddonTemplate"
+      "com.yalu.addon.TranslateAddon"
     ]
   },
   "mixins": [
-    "addon-template.mixins.json"
+    "addon-Translate.mixins.json"
   ],
   "custom": {
     "meteor-client:color": "225,25,25"

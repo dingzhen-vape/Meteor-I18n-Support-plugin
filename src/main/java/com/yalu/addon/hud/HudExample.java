@@ -1,6 +1,6 @@
-package com.example.addon.hud;
+package com.yalu.addon.hud;
 
-import com.example.addon.AddonTemplate;
+import com.yalu.addon.TranslateAddon;
 import meteordevelopment.meteorclient.systems.hud.HudElement;
 import meteordevelopment.meteorclient.systems.hud.HudElementInfo;
 import meteordevelopment.meteorclient.systems.hud.HudRenderer;
@@ -10,7 +10,7 @@ public class HudExample extends HudElement {
     /**
      * The {@code name} parameter should be in kebab-case.
      */
-    public static final HudElementInfo<HudExample> INFO = new HudElementInfo<>(AddonTemplate.HUD_GROUP, "example", "HUD element example.", HudExample::new);
+    public static final HudElementInfo<HudExample> INFO = new HudElementInfo<>(TranslateAddon.HUD_GROUP, "example", "HUD element example.", HudExample::new);
 
     public HudExample() {
         super(INFO);
