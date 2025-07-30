@@ -2178,7 +2178,7 @@
   "Setting.Meteor.port": "端口",
   "Setting.Meteor.port.Description": "用于连接的端口.",
   "Setting.Meteor.custom-font": "自定义字体",
-  "Setting.Meteor.custom-font.Description": "Text will use custom font.",
+  "Setting.Meteor.custom-font.Description": "文字将使用自定义字体.（因为Meteor框架问题，无法直接渲染非英文文字。等待插件后续更新（或者根本不更新哈哈哈哈））",
   "Setting.Meteor.font": "字体",
   "Setting.Meteor.font.Description": "使用的自定义字体.",
   "Setting.Meteor.rainbow-speed": "彩虹速度",
