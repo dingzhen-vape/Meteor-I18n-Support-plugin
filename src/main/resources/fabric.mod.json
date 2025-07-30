@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "addon-template",
   "version": "${version}",
-  "name": "Meteor CN Translator",
-  "description": "An addon template for Meteor Client addons.",
+  "name": "Meteor I18n Support",
+  "description": "为Meteor添加国际化支持",
   "authors": [
     "kono_yalu"
   ],

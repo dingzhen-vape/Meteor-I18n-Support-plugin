@@ -2252,5 +2252,7 @@
   "Setting.Meteor.rainbow-brightness": "rainbow-brightness",
   "Setting.Meteor.rainbow-brightness.Description": "",
   "Setting.Meteor.module-info-color": "module-info-color",
-  "Setting.Meteor.module-info-color.Description": "Color of module info text."
+  "Setting.Meteor.module-info-color.Description": "Color of module info text.",
+  "Module.Meteor.关于汉化插件": "关于汉化插件",
+  "Module.Meteor.关于汉化插件.Description": ""
 }
