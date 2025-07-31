@@ -100,8 +100,6 @@ public class Translator {
 
                 }catch(IOException e)
                 {
-                    System.out.println("Failed to load translations for "
-                        + langCode + " from pack " + resource.getPackId());
                     e.printStackTrace();
                 }
         }

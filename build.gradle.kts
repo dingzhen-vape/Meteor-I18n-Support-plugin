@@ -25,8 +25,8 @@ dependencies {
     mappings("net.fabricmc:yarn:${properties["yarn_mappings"] as String}:v2")
     modImplementation("net.fabricmc:fabric-loader:${properties["loader_version"] as String}")
 
-    // Meteor
-    modImplementation("meteordevelopment:meteor-client:${properties["minecraft_version"] as String}-SNAPSHOT")
+    // https://mvnrepository.com/artifact/meteordevelopment/meteor-client
+    implementation("meteordevelopment:meteor-client:0.5.7")
 }
 
 tasks {

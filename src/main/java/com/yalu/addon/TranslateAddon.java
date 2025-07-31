@@ -1,14 +1,9 @@
 package com.yalu.addon;
 
 import com.mojang.logging.LogUtils;
-import com.yalu.addon.commands.CommandExample;
-import com.yalu.addon.hud.HudExample;
 import com.yalu.addon.modules.AboutThisPlugin;
-import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.addons.GithubRepo;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
-import meteordevelopment.meteorclient.commands.Commands;
-import meteordevelopment.meteorclient.systems.hud.Hud;
 import meteordevelopment.meteorclient.systems.hud.HudGroup;
 import meteordevelopment.meteorclient.systems.modules.Category;
 import meteordevelopment.meteorclient.systems.modules.Modules;
@@ -20,7 +15,7 @@ public class TranslateAddon extends MeteorAddon {
     public static final Logger LOG = LogUtils.getLogger();
     public static final Category CATEGORY = new Category("Example");
     public static final HudGroup HUD_GROUP = new HudGroup("Example");
-    public static final MinecraftClient MC = MeteorClient.mc;
+    public static final MinecraftClient MC = MinecraftClient.getInstance();
     public static final Translator TRANSLATOR = new Translator();
     @Override
     public void onInitialize() {
@@ -28,12 +23,6 @@ public class TranslateAddon extends MeteorAddon {
 
         // Modules
         Modules.get().add(new AboutThisPlugin());
-
-        // Commands
-        Commands.add(new CommandExample());
-
-        // HUD
-        Hud.get().register(HudExample.INFO);
     }
 
     @Override
