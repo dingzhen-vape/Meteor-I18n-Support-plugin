@@ -32,7 +32,7 @@
 我
 AI
 Meteor开发者
-
+Wurst客户端提供语言文件I18n支持思路
 
 EN Version:
 ## Meteor I18n Support
