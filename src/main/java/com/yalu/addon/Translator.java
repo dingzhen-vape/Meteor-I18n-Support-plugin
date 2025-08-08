@@ -1,12 +1,9 @@
 package com.yalu.addon;
 
-import com.google.common.collect.Lists;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.resource.language.I18n;
-import net.minecraft.client.resource.language.TranslationStorage;
 import net.minecraft.resource.Resource;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
@@ -23,7 +20,6 @@ import java.util.function.BiConsumer;
 
 public class Translator {
     private final JsonObject langJson = new JsonObject();
-    private TranslationStorage mcEnglish;
     private Map<String, String> currentLangStrings;
 
     public String Translate(String key,String name) {
@@ -40,15 +36,12 @@ public class Translator {
                 e.printStackTrace();
             }
         }
-        return translateMc(key);
+        return name+"[!]";
     }
 
 
     public void reload(ResourceManager manager)
     {
-        mcEnglish = TranslationStorage.load(manager,
-            Lists.newArrayList("en_us.json"), false);
-
         HashMap<String, String> currentLangStrings = new HashMap<>();
         //从mixin获取管理器然后获取当前语言的语言代码，然后加载翻译文件
 //		//这个方法会将语言文件内的键值对赋值给currentLangStrings（这是个HASHMAP（键值对））
@@ -71,14 +64,6 @@ public class Translator {
             langCodes.add(mainLangCode);
 
         return langCodes;
-    }
-
-    public String translateMc(String key, Object... args)
-    {
-        if(I18n.hasTranslation(key))
-            return I18n.translate(key, args);
-
-        return key;
     }
 
     private void loadTranslations(ResourceManager manager,
@@ -105,13 +90,5 @@ public class Translator {
                     e.printStackTrace();
                 }
         }
-    }
-
-    public Map<String, String> getCurrentLangStrings() {
-        return currentLangStrings;
-    }
-
-    public TranslationStorage getMcEnglish() {
-        return mcEnglish;
     }
 }

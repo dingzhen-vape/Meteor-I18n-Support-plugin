@@ -10,6 +10,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.logging.Logger;
+
 import static com.yalu.addon.TranslateAddon.MC;
 import static com.yalu.addon.TranslateAddon.TRANSLATOR;
 
@@ -25,7 +27,7 @@ public abstract class ModuleMixin {
     public String description;
     @Unique
     public String name;
-    @Inject(method = "<init>*", at = @At("TAIL"))
+    @Inject(method = "<init>*", at = @At("RETURN"))
     public void onInit(CallbackInfo ci){
         TRANSLATOR.reload(MC.getResourceManager());
         String ModuleKey = "Module.Meteor." + this.name;
