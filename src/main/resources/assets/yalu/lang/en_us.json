@@ -2219,7 +2219,7 @@
   "Setting.Meteor.border.Description": "How much space to add around the text.",
   "Setting.Meteor.snapping-range": "snapping-range",
   "Setting.Meteor.snapping-range.Description": "Snapping range in editor.",
-  "Module.Meteor.关于汉化插件": "关于汉化插件",
+  "Module.Meteor.关于汉化插件": "关于翻译插件",
   "Module.Meteor.关于汉化插件.Description": "插件作者|译者：食我压路",
   "Setting.Meteor.update-delay": "update-delay",
   "Setting.Meteor.update-delay.Description": "Update delay in ticks",
