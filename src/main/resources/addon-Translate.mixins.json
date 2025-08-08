@@ -1,5 +1,5 @@
 {
-  "required": true,
+  "required": false,
   "package": "com.yalu.addon.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
@@ -11,7 +11,6 @@
   },
   "mixins": [
     "ModuleMixin",
-    "SettingGroupMixin",
     "SettingMixin",
     "VanillaTextRendererMixin"
   ]

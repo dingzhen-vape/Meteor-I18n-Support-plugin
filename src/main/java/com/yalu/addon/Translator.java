@@ -21,7 +21,6 @@ import java.util.function.BiConsumer;
 public class Translator {
     private final JsonObject langJson = new JsonObject();
     private Map<String, String> currentLangStrings;
-
     public String Translate(String key,String name) {
         String value = this.currentLangStrings.get(key);
         if(value != null){
@@ -36,7 +35,7 @@ public class Translator {
                 e.printStackTrace();
             }
         }
-        return name+"[!]";
+        return name;
     }
 
 

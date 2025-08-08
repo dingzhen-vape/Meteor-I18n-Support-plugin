@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 import static com.yalu.addon.TranslateAddon.MC;
 import static com.yalu.addon.TranslateAddon.TRANSLATOR;
 
-@Mixin(value = Module.class,remap = false,priority = 1001)
+@Mixin(value = Module.class,remap = false,priority = 999)
 public abstract class ModuleMixin {
     @Final
     @Mutable
