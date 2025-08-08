@@ -25,7 +25,7 @@ public abstract class ModuleMixin {
     public String description;
     @Unique
     public String name;
-    @Inject(method = "<init>*", at = @At("TAIL"))
+    @Inject(method = "<init>*", at = @At("RETURN"))
     public void onInit(CallbackInfo ci){
         TRANSLATOR.reload(MC.getResourceManager());
         String ModuleKey = "Module.Meteor." + this.name;

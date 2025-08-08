@@ -25,7 +25,7 @@ public class SettingMixin {
     @Final
     @Shadow
     public String description;
-    @Inject(method = "<init>",at = @At("TAIL"))
+    @Inject(method = "<init>",at = @At("RETURN"))
     public void init(String name, String description, Object defaultValue, Consumer onChanged, Consumer onModuleActivated, IVisible visible, CallbackInfo ci){
         TRANSLATOR.reload(MC.getResourceManager());
         String SettingKey = "Setting.Meteor." + name;
