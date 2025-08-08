@@ -23,10 +23,11 @@
 - ！！！MeteorCN以后可能不会更新
 
 ### 待办事项
-- [ ] 更低版本的适配
-- [ ] 完善README.md
-- [ ] 完善代码注释
 - [ ] Baritone的选项翻译
+
+### 使用教程 
+
+ https://www.bilibili.com/video/BV1zX8yzSE9E?spm_id_from=333.788.videopod.sections&vd_source=113cda7aa1ace627d124f6b5f8e83d4c&p=2
 
 ### 鸣谢
 我
