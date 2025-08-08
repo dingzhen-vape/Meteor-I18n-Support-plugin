@@ -40,7 +40,7 @@ public class Translator {
                 e.printStackTrace();
             }
         }
-        return translateMc(key);
+        return name;
     }
 
 
