@@ -27,7 +27,7 @@
 
 ### 使用教程 
 
- https://www.bilibili.com/video/BV1zX8yzSE9E?spm_id_from=333.788.videopod.sections&vd_source=113cda7aa1ace627d124f6b5f8e83d4c&p=2
+ BiliBili(https://www.bilibili.com/video/BV1zX8yzSE9E?spm_id_from=333.788.videopod.sections&vd_source=113cda7aa1ace627d124f6b5f8e83d4c&p=2)
 
 ### 鸣谢
 我
@@ -36,28 +36,38 @@ Meteor开发者
 Wurst客户端提供语言文件I18n支持思路
 
 EN Version:
-## Meteor I18n Support
-#### This plugin adds lang file support to Meteor client, allowing most text to be modified without hardcoding
-### How to use
-- Use it with Meteor client like any other plugin - just place it in the mods folder.
+# Meteor I18n Support  
+#### This plugin adds lang file support to the Meteor client, enabling non-hardcoded modifications for most text content  
+### How to use  
+Use it alongside the Meteor client by placing it in the mods folder like any other plugin.  
 
-### Principle
-- Meteor's original text is hardcoded directly into the source code.
-This plugin extracts all text into separate language files for easy non-hardcoded modifications.
-It replaces Module class titles with corresponding text from language files during each load.
-- Disables Meteor's custom rendering
-- Forces VanillaTextRenderer's scaleIndividually to always be true for proper text display
-### Notes
-- !!! Not fully tested across all versions - currently only verified on dev version 1.21.8
-- !!! Not extensively tested - may have rare conflicts with other plugins. If game crashes, try removing this plugin
-### Todo
-- [ ] Improve README.md
-- [ ] Improve code comments
-- [ ] Baritone options translation
-### Credits
-Me
-AI
-Meteor Developers
+### Principle  
+- Meteor's original language files are hardcoded, meaning all text is directly embedded in the code.  
+- This plugin extracts all text into a separate language file, allowing for easy non-hardcoded modifications.  
+- During each load, it replaces the `title` of the `Module` class with the corresponding text from the existing language file.  
+- It disables Meteor's custom rendering.  
+- Ensures `scaleIndividually` in `VanillaTextRenderer` is always set to `true` for proper text display.  
+
+### Notes  
+- !!! This plugin has not been fully tested across all versions.  
+- Testing shows it is incompatible with versions below 1.21.  
+- !!! Comprehensive testing is lacking; conflicts may rarely occur when used with other plugins. If the game crashes, try removing this plugin.  
+- !!! It can support other Meteor plugins synchronously. Move the content from the `lang.json` file in the version folder's root to the corresponding language file (`asset/.../lang/XX_XX.json`).  
+- !!! This plugin does not default to supporting pre-localized Meteor clients.  
+- !!! MeteorCN may not receive future updates.  
+
+### To-Do  
+- [ ] Translate Baritone's options.  
+
+### Tutorial  
+https://www.bilibili.com/video/BV1zX8yzSE9E?spm_id_from=333.788.videopod.sections&vd_source=113cda7aa1ace627d124f6b5f8e83d4c&p=2  
+
+### Credits  
+Me  
+AI  
+Meteor Developers  
+Wurst Client (for the I18n support concept)  
+
 
 <img width="2560" height="1351" alt="Snipaste_2025-07-31_02-18-44" src="https://github.com/user-attachments/assets/d5d28a82-5da4-456a-8aa0-ec5e35d8e18c" />
 
