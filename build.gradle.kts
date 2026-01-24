@@ -1,5 +1,5 @@
 plugins {
-    id("fabric-loom") version "1.11-SNAPSHOT"
+    id("fabric-loom") version "1.14.10"
 }
 
 base {
@@ -37,7 +37,6 @@ tasks {
         )
 
         inputs.properties(propertyMap)
-
         filteringCharset = "UTF-8"
 
         filesMatching("fabric.mod.json") {
@@ -47,7 +46,6 @@ tasks {
 
     jar {
         inputs.property("archivesName", project.base.archivesName.get())
-
         from("LICENSE") {
             rename { "${it}_${inputs.properties["archivesName"]}" }
         }
