@@ -3,11 +3,12 @@ package com.yalu.addon;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.resource.Resource;
-import net.minecraft.resource.ResourceManager;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.Language;
+import com.mojang.authlib.minecraft.client.MinecraftClient;
+import net.minecraft.client.Minecraft;
+import net.minecraft.locale.Language;
+import net.minecraft.resources.Identifier;
+import net.minecraft.server.packs.resources.Resource;
+import net.minecraft.server.packs.resources.ResourceManager;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -44,25 +45,25 @@ public class Translator {
         HashMap<String, String> currentLangStrings = new HashMap<>();
         //从mixin获取管理器然后获取当前语言的语言代码，然后加载翻译文件
 //		//这个方法会将语言文件内的键值对赋值给currentLangStrings（这是个HASHMAP（键值对））
-        loadTranslations(manager, getCurrentLangCodes(),
+        loadTranslations(manager, getCurrentLangCode(),
             currentLangStrings::put);
         //设置不可变的map 也就是说现在这个currentLangStrings就是当前语言的键值对翻译了
         this.currentLangStrings =
             Collections.unmodifiableMap(currentLangStrings);
     }
 
-    private Iterable<String> getCurrentLangCodes() {
+    private Iterable<String> getCurrentLangCode() {
         // Weird bug: Some users have their language set to "en_US" instead of
         // "en_us.json" for some reason. Last seen in 1.21.
-        String mainLangCode = MinecraftClient.getInstance().getLanguageManager()
-            .getLanguage().toLowerCase();
+        String mainLangCode = Minecraft.getInstance().getLanguageManager()
+            .getSelected().toLowerCase();
 
-        ArrayList<String> langCodes = new ArrayList<>();
-        langCodes.add("en_us.json");
-        if(!"en_us.json".equals(mainLangCode))
-            langCodes.add(mainLangCode);
+//        ArrayList<String> langCodes = new ArrayList<>();
+//        langCodes.add("en_us.json");
+//        if(!"en_us.json".equals(mainLangCode))
+//            langCodes.add(mainLangCode);
 
-        return langCodes;
+        return Collections.singleton(mainLangCode);
     }
 
     private void loadTranslations(ResourceManager manager,
@@ -75,17 +76,17 @@ public class Translator {
             String langFilePath = "lang/" + langCode + ".json";
 
             //注册语言ID
-            Identifier langId = Identifier.of("yalu", langFilePath);
+            Identifier langId = Identifier.fromNamespaceAndPath("yalu", langFilePath);
 
-            for(Resource resource : manager.getAllResources(langId))
-                try(InputStream stream = resource.getInputStream())
+            for(Resource resource : manager.getResourceStack(langId))
+                try(InputStream stream = resource.open())
                 {
-                    Language.load(stream, entryConsumer);
+                    Language.loadFromJson(stream, entryConsumer);
 
                 }catch(IOException e)
                 {
                     System.out.println("Failed to load translations for "
-                        + langCode + " from pack " + resource.getPackId());
+                        + langCode + " from pack " + resource.sourcePackId());
                     e.printStackTrace();
                 }
         }

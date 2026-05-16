@@ -3,8 +3,10 @@ package com.yalu.addon.modules;
 import com.yalu.addon.TranslateAddon;
 import meteordevelopment.meteorclient.systems.modules.Module;
 import meteordevelopment.meteorclient.utils.player.ChatUtils;
-import net.minecraft.text.ClickEvent;
-import net.minecraft.text.Text;
+import net.minecraft.network.chat.ClickEvent;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
+
 import java.net.URI;
 
 public class AboutThisPlugin extends Module {
@@ -15,7 +17,7 @@ public class AboutThisPlugin extends Module {
 
     @Override
     public void onActivate() {
-        ChatUtils.sendMsg(Text.literal("插件作者|译者：食我压路" +
+        ChatUtils.sendMsg(Component.literal("插件作者|译者：食我压路" +
             "\n汉化插件版本："+ TranslateAddon.VERSION +
             "\n------------------------------------------------------------------------------------------------------"+
             "\n插件描述：为Meteor客户端或其他插件添加了语言文件支持" +
@@ -25,8 +27,8 @@ public class AboutThisPlugin extends Module {
             "\n本插件完全免费且开源，请勿用于商业用途，且不要上当受骗" +
             "\n如果发现插件翻译不全或出现未翻译的问题请查看版本文件夹根目录下的lang.json文件自行翻译" +
             "\n注意！如果有发现功能名称后面有'[!]'的情况，则说明这个功能尚未翻译，请自行翻译"));
-        ChatUtils.sendMsg(Text.literal("点我跳转译者B站主页").styled(s -> s.withClickEvent(new ClickEvent.OpenUrl(URI.create("https://space.bilibili.com/432060575?spm_id_from=333.1007.0.0")))));
-        ChatUtils.sendMsg(Text.literal("点我跳转插件仓库").styled(s -> s.withClickEvent(new ClickEvent.OpenUrl(URI.create("https://github.com/dingzhen-vape/Meteor-Translate-plugin/settings")))));
+        ChatUtils.sendMsg(Component.literal("点我跳转译者B站主页").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.OpenUrl(URI.create("https://space.bilibili.com/432060575?spm_id_from=333.1007.0.0")))));
+        ChatUtils.sendMsg(Component.literal("点我跳转插件仓库").setStyle(Style.EMPTY.withClickEvent(new ClickEvent.OpenUrl(URI.create("https://github.com/dingzhen-vape/Meteor-Translate-plugin/settings")))));
 
     }
 }
