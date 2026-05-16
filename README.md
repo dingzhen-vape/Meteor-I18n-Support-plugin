@@ -15,12 +15,12 @@
 - 使VanillaTextRenderer内的scaleIndividually始终设置成true，以保证文字显示正确
 
 ### 注意事项
-- ！！！本插件未进行全版本测试
+- 本插件未进行全版本测试
 - 经过测试 在1.21以下版本未进行适配无法使用
-- ！！！本插件未进行全面的测试，与其他插件一起使用时可能小概率存在冲突，若游戏崩溃，可以尝试将本插件删除
-- ！！！本插件可以同步支持其他Meteor插件 需要将版本文件夹根目录lang.json文件内的内容移动到相应的语言文件内（asset/.../lang/XX_XX.json）
-- ！！！本插件不会默认适配已经汉化过的Meteor客户端
-- ！！！MeteorCN以后可能不会更新
+- 本插件未进行全面的测试，与其他插件一起使用时可能小概率存在冲突，若游戏崩溃，可以尝试将本插件删除
+- 本插件可以同步支持其他大部分Meteor插件 需要将版本文件夹根目录lang.json文件内的内容移动到相应的语言文件内（asset/.../lang/XX_XX.json）
+- 本插件不会默认适配已经汉化过的Meteor客户端
+- MeteorCN以后可能不会更新
 
 ### 待办事项
 - [ ] Baritone的选项翻译
@@ -49,12 +49,12 @@ Use it alongside the Meteor client by placing it in the mods folder like any oth
 - Ensures `scaleIndividually` in `VanillaTextRenderer` is always set to `true` for proper text display.  
 
 ### Notes  
-- !!! This plugin has not been fully tested across all versions.  
+- This plugin has not been fully tested across all versions.  
 - Testing shows it is incompatible with versions below 1.21.  
-- !!! Comprehensive testing is lacking; conflicts may rarely occur when used with other plugins. If the game crashes, try removing this plugin.  
-- !!! It can support other Meteor plugins synchronously. Move the content from the `lang.json` file in the version folder's root to the corresponding language file (`asset/.../lang/XX_XX.json`).  
-- !!! This plugin does not default to supporting pre-localized Meteor clients.  
-- !!! MeteorCN may not receive future updates.  
+- Comprehensive testing is lacking; conflicts may rarely occur when used with other plugins. If the game crashes, try removing this plugin.  
+- It can support other Meteor plugins synchronously. Move the content from the `lang.json` file in the version folder's root to the corresponding language file (`asset/.../lang/XX_XX.json`).  
+- This plugin does not default to supporting pre-localized Meteor clients.  
+- MeteorCN may not receive future updates.  
 
 ### To-Do  
 - [ ] Translate Baritone's options.  
